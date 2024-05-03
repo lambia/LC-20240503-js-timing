@@ -49,16 +49,16 @@
 
 
 //Creo un cronometro brutto
-let seconds = 0;
+let centesimi = 0;
 let cronometro;
 
 document.getElementById("start").addEventListener("click", function() {
 	console.log("avvio il timer");
 
 	cronometro = setInterval(function() {
-		seconds++;
-		document.querySelector("h2").innerText = `Sono trascorsi: ${seconds} ms`;
-	}, 1);
+		centesimi++;
+		document.querySelector("h2").innerText = `Sono trascorsi: ${centesimi / 100}s`;
+	}, 10) //ogni 10ms = ogni 0.010 secondi = ogni centesimo di secondo
 });
 
 document.getElementById("stop").addEventListener("click", function() {
